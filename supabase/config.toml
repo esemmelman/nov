@@ -1,0 +1,3 @@
+[functions.nov-ballot-2026-sync-v1]
+# Authentication is the random 256-bit capability checked by the function.
+verify_jwt = false
