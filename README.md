@@ -23,3 +23,9 @@ The random 256-bit sync code is a bearer credential: keep it private. It is stor
 Project: bnaimitzvah (`fgomaujsdblpzxhnnqrg`). Isolated table: `public.nov_ballot_2026_vaults_v1`; endpoint: `nov-ballot-2026-sync-v1`. RLS is enabled with no browser-role grants or policies: only the capability-authenticated Edge Function accesses rows via the server-only service role. Revision-conditional PATCH prevents concurrent lost updates. Existing tables, functions, auth settings, and storage buckets are unchanged.
 
 Run `node sync.test.cjs` for a live integration test using disposable encrypted data. It prints the test row hash for cleanup by an administrator; no private token is logged. Run `node client.test.cjs` to check client-side sync behavior with isolated fake browser contexts.
+
+## Compare choices with results
+
+After unlocking, select **Compare with results** to view all 46 contests side by side with the current saved choices. The comparison follows edits and cloud pulls and is erased when the ballot locks. No screenshot selections are embedded in public code.
+
+`results.js` contains a **static preliminary snapshot checked November 4, 2026 (Pacific time)**, not a live feed or certified outcomes. Each row links to its reporting source (The Ballot Book or the Orange County official reporting site). Statewide/district totals are used where verified; Court of Appeal returns are explicitly Orange County only and excluded from match counts. City Council compares with the four leading candidates. Update the public snapshot as counting continues. Run `node results.test.cjs` for comparison behavior checks.
